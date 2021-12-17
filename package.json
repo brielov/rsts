@@ -1,0 +1,51 @@
+{
+  "name": "rsts",
+  "version": "0.0.1",
+  "description": "A naive TypeScript port of Rust's Result and Option types",
+  "main": "dist/rsts.js",
+  "module": "dist/rsts.mjs",
+  "typings": "dist/rsts.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && rollup -c",
+    "postinstall": "is-ci || husky install",
+    "postpublish": "pinst --enable",
+    "prepare": "npm run build",
+    "prepublishOnly": "pinst --disable",
+    "test": "jest"
+  },
+  "keywords": [
+    "matching",
+    "option",
+    "pattern",
+    "result",
+    "rust",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "Gabriel Vaquer <brielov@icloud.com>",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/node": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "esbuild": "^0.14.5",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "is-ci": "^3.0.1",
+    "jest": "^27.4.5",
+    "lint-staged": "^12.1.2",
+    "pinst": "^2.1.6",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.61.1",
+    "rollup-plugin-dts": "^4.0.1",
+    "rollup-plugin-esbuild": "^4.7.2",
+    "ts-jest": "^27.1.1",
+    "typescript": "^4.5.4"
+  }
+}
