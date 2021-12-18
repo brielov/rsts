@@ -1,6 +1,6 @@
 {
   "name": "rsts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A naive TypeScript port of Rust's Result and Option types",
   "main": "dist/rsts.mjs",
   "typings": "dist/rsts.d.ts",
