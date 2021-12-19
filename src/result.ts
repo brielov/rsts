@@ -128,7 +128,8 @@ export class Result<T, E extends Error = Error> {
   }
 }
 
-export const Ok = <T>(val: T): Result<T> => new Result(true, val);
+export const Ok = <T, E extends Error = Error>(val: T): Result<T, E> =>
+  new Result<T, E>(true, val);
 
-export const Err = <E extends Error>(err: E): Result<never, E> =>
-  new Result(false, err) as Result<never, E>;
+export const Err = <E extends Error, T = never>(err: E): Result<T, E> =>
+  new Result<T, E>(false, err);
