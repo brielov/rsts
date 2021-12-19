@@ -1,4 +1,4 @@
-import { Err, Ok, Result } from "./rs";
+import { Err, Ok, Result } from "./result";
 
 const error = new Error("fail");
 

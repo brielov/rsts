@@ -1,4 +1,4 @@
-import { None, Option, Some } from "./rs";
+import { None, Option, Some } from "./option";
 
 describe("Option", () => {
   describe(".and()", () => {
@@ -171,7 +171,9 @@ describe("Option", () => {
 
     it("returns a Err Result when the option is None", () => {
       const res = None().okOr(new Error("fail"));
-      expect(() => res.unwrap()).toThrow("fail");
+      expect(() => res.unwrap()).toThrow(
+        "called `Result.unwrap()` on an `Err` value",
+      );
     });
   });
 
@@ -186,7 +188,9 @@ describe("Option", () => {
     it("calls `err` when the option is None", () => {
       const f = jest.fn(() => new Error("fail"));
       const res = None().okOrElse(f);
-      expect(() => res.unwrap()).toThrow("fail");
+      expect(() => res.unwrap()).toThrow(
+        "called `Result.unwrap()` on an `Err` value",
+      );
       expect(f).toHaveBeenCalledTimes(1);
     });
   });

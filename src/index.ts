@@ -1,1 +1,2 @@
-export { type Result, type Option, Ok, Err, Some, None } from "./rs";
+export { type Option, Some, None } from "./option";
+export { type Result, Ok, Err } from "./result";
