@@ -39,7 +39,7 @@ readFile("/path/to/file").match({
 });
 
 function env(key: string): Option<string> {
-  return process.env[key] ? Some(process.env[key]) : None;
+  return process.env[key] ? Some(process.env[key]) : None();
 }
 
 env("NODE_ENV").match({
